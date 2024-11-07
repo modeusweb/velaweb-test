@@ -1,0 +1,107 @@
+body {
+  font-family: $primary-font-family;
+  font-size: $primary-font-size;
+  background-color: $primary-background-color;
+  color: $primary-text-color;
+  letter-spacing: $primary-letter-spacing;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 24px 0;
+  padding: 0;
+  font-weight: bold;
+  line-height: 1.21;
+}
+
+h1 {
+  margin-bottom: clamp(24px, 5.5vw, 39px);
+  font-size: clamp(30px, 5.5vw, 41px);
+}
+
+h2 {
+  font-size: clamp(30px, 5.5vw, 41px);
+  color: $headline-color;
+}
+
+h3 {
+  font-size: clamp(24px, 5.5vw, 34px);
+}
+
+h4 {
+  font-size: clamp(20px, 5.5vw, 31px);
+}
+
+h5 {
+  font-size: clamp(18px, 5.5vw, 24px);
+}
+
+h6 {
+  font-size: clamp(16px, 5.5vw, 18px);
+}
+
+p {
+  margin: 0 0 18px -2px;
+  letter-spacing: -0.002em;
+  line-height: 1.21;
+
+  + h2 {
+    margin-top: 30px;
+  }
+}
+
+ul,
+ol {
+  padding-left: 1em;
+
+  li {
+    margin: 0 0 18px 0;
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  //color: $primary-color;
+  transition: 0.3s;
+
+  &:hover {
+    //color: $primary-hover-color;
+  }
+}
+
+button {
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background: transparent;
+
+  &[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1306px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.main-area {
+  flex: 1 1 auto;
+  padding: 30px 0;
+}
