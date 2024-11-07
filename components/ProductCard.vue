@@ -1,6 +1,11 @@
 <template>
   <div class="product-card">
-    <img :src="product.image" alt="Product image" />
+    <nuxt-img
+      :src="product.image"
+      :alt="product.title"
+      format="png"
+      srcset=""
+    />
     <h3>{{ product.title }}</h3>
     <p>
       {{ product.regular_price.value }} {{ product.regular_price.currency }}

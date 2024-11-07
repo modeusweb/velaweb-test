@@ -26,9 +26,7 @@ onMounted(async () => await loadProducts());
 }
 .product-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  width: 100%;
-  max-width: 1200px;
 }
 </style>
