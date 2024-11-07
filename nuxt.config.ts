@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-07',
-  ssr: false,
+  // ssr: false,
   devtools: { enabled: false },
   modules: ['@pinia/nuxt', '@nuxtjs/google-fonts', '@nuxt/image'],
   app: {

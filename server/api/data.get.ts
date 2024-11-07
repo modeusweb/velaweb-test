@@ -9,10 +9,26 @@ async function loadJsonFile(filename: string) {
   return JSON.parse(data);
 }
 
+// Утилита для загрузки JSON с URL
+async function loadJsonFromUrl(baseUrl: string, filename: string) {
+  const url = `${baseUrl}/${filename}`;
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`Failed to fetch ${url}: ${response.statusText}`);
+  }
+  return response.json();
+}
+
 export default defineEventHandler(async () => {
-  const products = await loadJsonFile('products.json');
-  const brands = await loadJsonFile('brands.json');
-  const configurableProducts = await loadJsonFile('l3-products.json');
+  const isDevelopment = process.env.NODE_ENV === 'development';
+  const baseUrl = 'https://velaweb-test.vercel.app';
+  const filenames = ['products.json', 'brands.json', 'l3-products.json'];
+
+  const loaders = isDevelopment
+    ? filenames.map((file) => loadJsonFile(file))
+    : filenames.map((file) => loadJsonFromUrl(baseUrl, file));
+
+  const [products, brands, configurableProducts] = await Promise.all(loaders);
 
   return { products, brands, configurableProducts };
 });
