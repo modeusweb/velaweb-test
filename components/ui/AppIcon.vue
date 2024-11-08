@@ -21,6 +21,11 @@ defineProps({
   &--cart {
     width: 29px;
     height: 29px;
+
+    @include respond-to(medium) {
+      width: 20px;
+      height: 20px;
+    }
   }
 }
 </style>

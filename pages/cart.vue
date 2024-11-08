@@ -4,11 +4,11 @@
     <div v-if="cartItems.length">
       <CartItem v-for="item in cartItems" :key="item.product.id" :item="item" />
       <p class="total-amount">Итого: {{ totalAmount }} руб</p>
-      <router-link to="/" class="back-link">Продолжить покупки</router-link>
+      <nuxt-link to="/" class="back-link">Продолжить покупки</nuxt-link>
     </div>
     <div v-else>
       <p>Ваша корзина пуста.</p>
-      <router-link to="/" class="back-link">Перейти в каталог</router-link>
+      <nuxt-link to="/" class="back-link">Перейти в каталог</nuxt-link>
     </div>
   </div>
 </template>

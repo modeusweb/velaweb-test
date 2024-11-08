@@ -1,5 +1,5 @@
 <template>
-  <div class="quantity-selector">
+  <div class="quantity-selector" :class="`quantity-selector--${styling}`">
     <button
       class="quantity-selector__btn"
       @click="decreaseQuantity"
@@ -10,11 +10,12 @@
     </button>
     <input
       class="quantity-selector__input"
-      type="text"
+      type="number"
       v-model="quantity"
       @input="onInputChange"
       name="quantity"
       aria-label="Количество"
+      min="1"
     />
     <button
       class="quantity-selector__btn"
@@ -30,6 +31,7 @@
 const props = defineProps<{
   initialQuantity: number;
   productId: number;
+  styling: 'small' | 'big';
 }>();
 const emit = defineEmits<{
   (e: 'updateQuantity', id: number, quantity: number): void;
@@ -99,6 +101,13 @@ watch(quantity, (newValue) => {
     color: $primary-text-color;
     outline: none;
     font-feature-settings: 'lnum' 1;
+    -moz-appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
   }
 }
 </style>

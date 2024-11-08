@@ -52,8 +52,16 @@ const component = computed(() => {
 
   &--circle {
     width: 60px;
+    flex: 0 0 60px;
     height: 60px;
+    padding: 5px;
     border-radius: 50%;
+
+    @include respond-to(medium) {
+      width: 40px;
+      flex: 0 0 40px;
+      height: 40px;
+    }
   }
 }
 </style>

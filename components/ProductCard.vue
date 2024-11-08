@@ -1,5 +1,5 @@
 <template>
-  <div class="card g-col-6 g-col-sm-6 g-col-lg-4">
+  <div class="card g-col-12 g-col-sm-6 g-col-lg-4">
     <div class="card__image">
       <nuxt-img
         class="card__image-img"
@@ -21,6 +21,7 @@
         :initialQuantity="1"
         :productId="product.id"
         @updateQuantity="handleUpdateQuantity"
+        styling="small"
       />
       <app-button
         class="card__to-cart"
@@ -57,6 +58,7 @@ const handleUpdateQuantity = (id: number, quantity: number) => {
   padding: 34px 12px 12px;
   border-radius: $primary-border-radius;
   box-shadow: $primary-box-shadow;
+  overflow: hidden;
 
   &__image {
     position: relative;
@@ -78,7 +80,7 @@ const handleUpdateQuantity = (id: number, quantity: number) => {
     min-height: 57px;
     align-items: center;
     justify-content: space-between;
-    gap: 1.5rem;
+    gap: 1rem;
     margin-top: 40px;
   }
 
@@ -91,7 +93,7 @@ const handleUpdateQuantity = (id: number, quantity: number) => {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 0.5rem;
     margin-top: auto;
     padding-top: 26px;
   }

@@ -72,6 +72,12 @@ const totalAmount = computed(() => cartStore.totalAmount);
       border-radius: 50%;
       position: relative;
 
+      @include respond-to(medium) {
+        width: 40px;
+        flex: 0 0 40px;
+        height: 40px;
+      }
+
       .icon {
         fill: $primary-color;
       }
