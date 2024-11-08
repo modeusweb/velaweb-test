@@ -19,12 +19,7 @@ const cartItems = computed(() => cartStore.items);
 const totalAmount = computed(() => cartStore.totalAmount);
 </script>
 
-<style scoped>
-.cart-page {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
+<style scoped lang="scss">
 .total-amount {
   font-size: 1.5em;
   font-weight: bold;

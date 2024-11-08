@@ -1,4 +1,3 @@
-<!-- AppCheckbox.vue -->
 <template>
   <label class="checkbox" :for="id">
     <input

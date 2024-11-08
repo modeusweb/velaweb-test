@@ -27,9 +27,3 @@ function removeItem(id: number) {
   cartStore.removeFromCart(id);
 }
 </script>
-
-<style scoped>
-.cart-item {
-  /* Add scss for cart item */
-}
-</style>

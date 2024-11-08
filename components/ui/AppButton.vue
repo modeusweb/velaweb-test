@@ -42,15 +42,18 @@ const component = computed(() => {
   text-align: center;
   color: #fff;
   border-radius: $secondary-border-radius;
+  background-color: $primary-color;
   transition: 0.3s;
   overflow: hidden;
 
-  &--primary {
-    background-color: $primary-color;
+  &:hover {
+    box-shadow: $primary-box-shadow;
+  }
 
-    &:hover {
-      background-color: $secondary-color;
-    }
+  &--circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
   }
 }
 </style>

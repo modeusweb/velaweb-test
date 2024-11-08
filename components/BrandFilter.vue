@@ -16,8 +16,8 @@
             :key="brand.id"
           >
             <app-checkbox
-              :id="'brand-' + brand.id"
-              :name="'brand-' + brand.id"
+              :id="`brand-${brand.id}`"
+              :name="`brand-${brand.id}`"
               :value="brand.id"
               :modelValue="selectedBrands.includes(brand.id)"
               @update:modelValue="(checked) => toggleBrand(brand.id, checked)"
