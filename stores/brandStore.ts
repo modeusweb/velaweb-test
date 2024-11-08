@@ -7,16 +7,18 @@ export const useBrandStore = defineStore('brand', () => {
   };
 
   const setBrandFilter = (brands: number[]) => {
-    selectedBrands.value = brands;
+    selectedBrands.value = [...new Set(brands)];
   };
 
-  const toggleBrand = (brandId: number) => {
-    if (selectedBrands.value.includes(brandId)) {
+  const toggleBrand = (brandId: number, checked: boolean) => {
+    if (checked) {
+      if (!selectedBrands.value.includes(brandId)) {
+        selectedBrands.value = [...selectedBrands.value, brandId];
+      }
+    } else {
       selectedBrands.value = selectedBrands.value.filter(
         (brand) => brand !== brandId,
       );
-    } else {
-      selectedBrands.value.push(brandId);
     }
   };
 

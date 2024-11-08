@@ -1,17 +1,11 @@
 <template>
-  <div class="catalog-page">
-    <h1>Каталог товаров</h1>
-    <BrandFilter />
-    <Catalog />
+  <h1>Заголовок</h1>
+  <div class="grid">
+    <BrandFilter class="g-col-12 g-col-md-3" />
+    <Catalog class="g-col-12 g-col-md-9" />
   </div>
 </template>
 
 <script setup lang="ts"></script>
 
-<style scoped lang="scss">
-.catalog-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-</style>
+<style scoped lang="scss"></style>

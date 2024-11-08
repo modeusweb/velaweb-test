@@ -5,25 +5,23 @@ $primary-color: #5e5e5e;
 $primary-hover-color: #efefef;
 $secondary-color: #1253a2;
 $primary-background-color: #fff;
-$secondary-background-color: #fbfcfd;
 $primary-text-color: #5e5e5e;
-$secondary-text-color: #8f8f8f;
-$primary-border-color: #bcbcbc;
+$secondary-text-color: #bbb;
+$primary-border-color: #808080;
 $secondary-border-color: #eeeff1;
-$headline-color: #383838;
-$error-color: #dc3545;
+$accent-color: #fc3b3b;
 
 // Переменные для шрифтов
 $primary-font-family: 'Raleway', sans-serif;
 $primary-font-size: 16px;
+$secondary-font-size: 14px;
 $primary-line-height: 1.2;
 $primary-letter-spacing: -0.01em;
 
 // Переменные для ui
 $primary-border-radius: 10px;
 $secondary-border-radius: 3px;
-$btn-border-radius: 2px;
-
+$small-border-radius: 2px;
 $primary-box-shadow:
   1px 1px 16px 0 rgba(36, 36, 36, 0.05),
   1px 1px 16px 0 rgba(36, 36, 36, 0.08);

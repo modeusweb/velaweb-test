@@ -1,5 +1,5 @@
 <template>
-  <div class="product-card">
+  <div class="card g-col-6 g-col-sm-6 g-col-lg-4">
     <nuxt-img
       :src="product.image"
       :alt="product.title"
@@ -8,7 +8,7 @@
     />
     <h3>{{ product.title }}</h3>
     <p>
-      {{ product.regular_price.value }} {{ product.regular_price.currency }}
+      {{ formatPrice(product.regular_price.value) }}
     </p>
     <button @click="addToCart(product)">Добавить в корзину</button>
   </div>

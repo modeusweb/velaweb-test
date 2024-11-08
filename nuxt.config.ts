@@ -55,6 +55,9 @@ export default defineNuxtConfig({
       preprocessorOptions: {
         scss: {
           additionalData: `
+            $enable-grid-classes: false;
+            $enable-cssgrid: true;
+            @import "bootstrap/scss/bootstrap-grid.scss";
             @import "~/assets/scss/_variables.scss";
             @import "~/assets/scss/_mixins.scss";
           `,
@@ -62,7 +65,7 @@ export default defineNuxtConfig({
       },
     },
   },
-  css: ['bootstrap/dist/css/bootstrap.min.css', '~/assets/scss/main.scss'],
+  css: ['~/assets/scss/main.scss'],
   googleFonts: {
     display: 'swap',
     useStylesheet: true,

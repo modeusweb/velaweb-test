@@ -16,11 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue';
-import { useCartStore } from '~/stores/cartStore';
-import { CartItem } from '~/types';
-
-const props = defineProps<{ item: CartItem }>();
+defineProps<{ item: CartItem }>();
 const cartStore = useCartStore();
 
 function updateQuantity(id: number, quantity: number) {
