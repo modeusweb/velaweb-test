@@ -9,23 +9,15 @@
         srcset=""
       />
     </div>
+
     <div class="cart-item__middle">
-      <div
-        class="cart-item__options"
-        v-if="Object.keys(item.product.selectedOptions).length"
-      >
-        <div class="cart-item__option">
-          <div class="cart-item__option-title">Размер:</div>
-          <div class="cart-item__option-value">
-            {{ item.product.selectedOptions?.size?.label }}
-          </div>
-        </div>
-        <div class="cart-item__option">
-          <div class="cart-item__option-title">Цвет:</div>
-          <div class="cart-item__option-value">
-            {{ item.product.selectedOptions?.color?.label }}
-          </div>
-        </div>
+      <div v-if="Object.keys(item.options).length" class="cart-item__options">
+        <span v-if="item.options.size" class="cart-item__options-pair">
+          {{ optionLabels['size'] }}: {{ item.options.size.label }}
+        </span>
+        <span v-if="item.options.color" class="cart-item__options-pair">
+          {{ optionLabels['color'] }}: {{ item.options.color.label }}
+        </span>
       </div>
       <h3 class="cart-item__title">{{ item.product.title }}</h3>
       <button class="cart-item__remove" @click="removeItem(item.product.id)">
@@ -33,6 +25,7 @@
         <span>Удалить</span>
       </button>
     </div>
+
     <div class="cart-item__right">
       <div class="cart-item__price">
         {{ formatPrice(item.product.regular_price.value) }}
@@ -52,7 +45,13 @@
 
 <script setup lang="ts">
 defineProps<{ item: CartItem }>();
+
 const cartStore = useCartStore();
+
+const optionLabels: Record<string, string> = {
+  size: 'Размер',
+  color: 'Цвет',
+};
 
 function updateQuantity(id: number, quantity: number) {
   cartStore.updateQuantity(id, quantity);

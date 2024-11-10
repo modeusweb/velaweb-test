@@ -4,8 +4,8 @@
       <div class="cart__items grid">
         <CartItem
           class="g-col-12"
-          v-for="item in cartItems"
-          :key="item.product.id"
+          v-for="(item, index) in cartItems"
+          :key="index"
           :item="item"
         />
       </div>

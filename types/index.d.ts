@@ -51,5 +51,5 @@ export interface VariantAttribute {
 export interface CartItem {
   product: Product;
   quantity: number;
-  options?: Record<string, any>;
+  options?: Record<string, ConfigurableOptionValue>;
 }
