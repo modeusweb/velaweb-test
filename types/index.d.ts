@@ -24,13 +24,14 @@ export interface ConfigurableOption {
   attribute_id: number;
   attribute_code: string;
   label: string;
+  position?: number;
   values: ConfigurableOptionValue[];
 }
 
 export interface ConfigurableOptionValue {
   label: string;
   value_index: number;
-  value: string;
+  value: string | number;
 }
 
 export interface Variant {

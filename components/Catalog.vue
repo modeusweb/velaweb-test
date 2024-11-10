@@ -15,5 +15,3 @@ const { loadProducts } = useProducts();
 
 onMounted(async () => await loadProducts());
 </script>
-
-<style scoped lang="scss"></style>

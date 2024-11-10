@@ -10,14 +10,21 @@
       />
     </div>
     <div class="cart-item__middle">
-      <div class="cart-item__options">
+      <div
+        class="cart-item__options"
+        v-if="Object.keys(item.product.selectedOptions).length"
+      >
         <div class="cart-item__option">
           <div class="cart-item__option-title">Размер:</div>
-          <div class="cart-item__option-value">S</div>
+          <div class="cart-item__option-value">
+            {{ item.product.selectedOptions?.size?.label }}
+          </div>
         </div>
         <div class="cart-item__option">
           <div class="cart-item__option-title">Цвет:</div>
-          <div class="cart-item__option-value">Green</div>
+          <div class="cart-item__option-value">
+            {{ item.product.selectedOptions?.color?.label }}
+          </div>
         </div>
       </div>
       <h3 class="cart-item__title">{{ item.product.title }}</h3>
