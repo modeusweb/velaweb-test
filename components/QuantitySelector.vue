@@ -70,6 +70,7 @@ watch(quantity, (newValue) => {
 .quantity-selector {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 68px;
   height: 24px;
   border: 1px solid $primary-border-color;
@@ -107,6 +108,29 @@ watch(quantity, (newValue) => {
     &::-webkit-inner-spin-button {
       -webkit-appearance: none;
       margin: 0;
+    }
+  }
+
+  &--big {
+    width: 208px;
+    height: 40px;
+
+    @include respond-to(large) {
+      width: 140px;
+    }
+
+    .quantity-selector__btn {
+      width: 48px;
+
+      .icon {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .quantity-selector__input {
+      flex: 1;
+      font-size: 14px;
     }
   }
 }

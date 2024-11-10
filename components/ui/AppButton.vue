@@ -33,16 +33,17 @@ const component = computed(() => {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
-  min-height: 35px;
-  padding: 5px 16px;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 1.2;
+  gap: 12px;
+  min-height: 65px;
+  padding: 19px 30px;
+  font-weight: 600;
+  font-size: clamp(16px, 3vw, 24px);
+  line-height: 1.1;
   text-align: center;
-  color: #fff;
-  border-radius: $secondary-border-radius;
+  letter-spacing: $secondary-letter-spacing;
+  border-radius: $small-border-radius;
   background-color: $primary-color;
+  color: #fff;
   transition: 0.3s;
   overflow: hidden;
 
@@ -54,6 +55,7 @@ const component = computed(() => {
     width: 60px;
     flex: 0 0 60px;
     height: 60px;
+    min-height: 0;
     padding: 5px;
     border-radius: 50%;
 

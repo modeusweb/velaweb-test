@@ -5,7 +5,3 @@
     <Catalog class="g-col-12 g-col-md-9" />
   </div>
 </template>
-
-<script setup lang="ts"></script>
-
-<style scoped lang="scss"></style>
