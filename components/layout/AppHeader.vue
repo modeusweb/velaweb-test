@@ -29,8 +29,6 @@
 </template>
 
 <script setup lang="ts">
-import { formatPrice } from '~/utils';
-
 const cartStore = useCartStore();
 const cartItems = computed(() => cartStore.items);
 const totalAmount = computed(() => cartStore.totalAmount);
@@ -101,6 +99,11 @@ const totalAmount = computed(() => cartStore.totalAmount);
       overflow: hidden;
       background-color: $accent-color;
       color: #fff;
+
+      @include respond-to(medium) {
+        top: -3px;
+        right: -3px;
+      }
     }
 
     &-info {

@@ -31,7 +31,8 @@
                   option.attribute_code
                 ]?.value_index === value.value_index
               "
-              :available="true"
+              :productId="product.id"
+              :valueIndex="value.value_index"
               @change="
                 productStore.updateSelectedOption(
                   product.id,

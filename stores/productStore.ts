@@ -83,6 +83,44 @@ export const useProductStore = defineStore('product', () => {
   };
 
   /**
+   * Проверяет доступность комбинации опции для указанного товара.
+   * Функция проверяет, существует ли хотя бы один вариант товара
+   * с заданной комбинацией значений атрибутов (например, цвет и размер).
+   *
+   * @param {number} productId - Идентификатор товара, для которого проверяется доступность.
+   * @param {string} attributeCode - Код атрибута, например, "color" или "size".
+   * @param {number} valueIndex - Индекс значения атрибута (например, индекс конкретного цвета или размера).
+   * @returns {boolean} - Возвращает true, если комбинация доступна, и false, если такой комбинации нет.
+   */
+  const isOptionAvailable = (
+    productId: number,
+    attributeCode: string,
+    valueIndex: number,
+  ): boolean => {
+    const product = products.value.find(
+      (p) => p.id === productId && p.type === 'configurable',
+    );
+    if (!product) return false;
+
+    const selectedOptions = selectedOptionsByProductId.value[productId] || {};
+
+    // Формируем целевой набор атрибутов, включая проверяемое значение
+    const targetAttributes = {
+      ...selectedOptions,
+      [attributeCode]: { value_index: valueIndex },
+    };
+
+    // Проверяем, существует ли вариант, соответствующий целевым атрибутам
+    return product.variants.some((variant) =>
+      variant.attributes.every((attr) =>
+        targetAttributes[attr.code]
+          ? targetAttributes[attr.code].value_index === attr.value_index
+          : true,
+      ),
+    );
+  };
+
+  /**
    * Добавляет товар или его выбранный вариант в корзину.
    * @param {Product} product - Товар для добавления.
    * @param {number} quantity - Количество.
@@ -116,6 +154,7 @@ export const useProductStore = defineStore('product', () => {
     selectedVariantByProductId,
     selectedVariantImage,
     updateSelectedOption,
+    isOptionAvailable,
     addToCart,
   };
 });
